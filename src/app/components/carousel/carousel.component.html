@@ -1,0 +1,30 @@
+<div (window:resize)="updateItemSizing()">
+  <div class="carousel" *ngIf="carouselItems">
+    <div *ngIf="shift" class="carousel__arrow-prev-wrapper">
+      <div class="carousel__arrow-prev" (click)="onArrowClick(-1)"></div>
+    </div>
+    <div class="carousel__content-wrapper">
+      <div
+        class="carousel__content"
+        style="
+          transform: translate({{ transformedBy }}px);
+        "
+      >
+        <app-carousel-item
+          *ngFor="let car of carouselItems"
+          [car]="car"
+        ></app-carousel-item>
+      </div>
+    </div>
+    <div
+      *ngIf="shift + itemsShown - carouselItems.length"
+      class="carousel__arrow-next-wrapper"
+      (click)="onArrowClick(1)"
+    >
+      <div class="carousel__arrow-next"></div>
+    </div>
+  </div>
+  <div *ngIf="!carouselItems">
+    <h1>No Items...</h1>
+  </div>
+</div>

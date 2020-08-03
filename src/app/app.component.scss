@@ -1,0 +1,16 @@
+.site-container {
+  width: 100%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: white;
+  max-width: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  padding: 0;
+  margin: 8px;
+}
